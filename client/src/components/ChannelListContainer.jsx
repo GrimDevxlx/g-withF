@@ -20,12 +20,19 @@ const SideBar = () => (
   </div>
 );
 
-
+const SquadHeader = () => (
+  <div className="channel-list__header">
+    <p className="channel-list__header__text">GWF Home</p>
+  </div>
+)
 
 const ChannelListContainer = () => {
   return (
     <>
       <SideBar />
+      <div className="channel-list__list__wrapper">
+        <SquadHeader />
+      </div>
     </>
   );
 }
