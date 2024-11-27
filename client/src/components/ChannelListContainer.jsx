@@ -2,13 +2,13 @@ import React from 'react'
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-
+import GamingWFIcon from '../components/assets/GamingWF.png'
 
 const SideBar = () => {
   <div className="channel-list__sidebar">
       <div className="channel-list__sidebar__icon1">
         <div className="icon1__inner">
-          <img src= {""} alt="#" width="30" />
+          <img src= {GamingWFIcon} alt="GamingWF" width="30" />
         </div>
       </div>
   </div>
