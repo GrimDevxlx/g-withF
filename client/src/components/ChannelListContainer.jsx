@@ -2,7 +2,7 @@ import React from 'react'
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-import GamingWFIcon from '../components/assets/GamingWF.png'
+import GamingWFIcon from '../assets/GamingWF.png'
 
 const SideBar = () => {
   <div className="channel-list__sidebar">
