@@ -12,7 +12,7 @@ const authToken = false;
 
 const App = () => {
 
-    if(authToken) return <Auth />
+    if(!authToken) return <Auth />
 
     
   return (
