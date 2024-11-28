@@ -7,8 +7,9 @@ import signinImage from '../assets/signup.jpg';
 
 const Auth = () => {
   const [isSignup, setisSignup] = useState(true);
-  const handleChange = () => {
-
+  const handleChange = () => {}
+  const switchMode = () => {
+    setisSignup((prevIsSignup) => !prevIsSignup);
   }
 
   return (
@@ -25,6 +26,7 @@ const Auth = () => {
                       type="text"
                       placeholder="Full Name"
                       onChange={handleChange}
+                      autoFocus
                       required
                     />
                   </div>
@@ -39,7 +41,62 @@ const Auth = () => {
                       required
                     />
                   </div>
+                  {isSignup && (
+                  <div className="auth__form-container_fields-content_input">
+                    <label htmlFor="phone#">Phone #</label>
+                    <input
+                      name="phone#"
+                      type="number"
+                      placeholder="+639"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                )}
+                 {isSignup && (
+                  <div className="auth__form-container_fields-content_input">
+                    <label htmlFor="avatarURL">Avatar URL</label>
+                    <input
+                      name="avatarURL"
+                      type="text"
+                      placeholder="Avatar URL"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                )}
+                <div className="auth__form-container_fields-content_input">
+                    <label htmlFor="password">Password</label>
+                    <input
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  
+                  {isSignup && (
+                    <div className="auth__form-container_fields-content_input">
+                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <input
+                      name="confirmPassword"
+                      type="password"
+                      placeholder="Confirm Password"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  )}
             </form>
+                  <div className="auth__form-container_fields-account">
+                    <p>
+                      {isSignup ? "Already have an account?" : "Don't have an account?"}
+                    </p>
+                      <span onClick={switchMode}>
+                      {isSignup ? 'Sign In' : 'Sign Up'}
+                      </span>
+                  </div>
           </div>
         </div>
     </div>
