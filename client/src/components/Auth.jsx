@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
-import signinImage from '../assets/signup.jpg';
+//import signinImage from '../assets/signup1.jpg';
 
 
 const Auth = () => {
@@ -98,6 +98,9 @@ const Auth = () => {
                       </span>
                   </div>
           </div>
+        </div>
+        <div className="auth__form-container_image">
+                  <img src="https://gifdb.com/images/high/welcome-greeting-1y2timm763pcwtl2.gif" alt="sign in" />  
         </div>
     </div>
   )
