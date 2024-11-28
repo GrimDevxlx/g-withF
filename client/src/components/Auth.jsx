@@ -4,10 +4,26 @@ import axios from 'axios';
 
 //import signinImage from '../assets/signup1.jpg';
 
-
+  const initialState = {
+    fullName: '',
+    username: '',
+    password: '',
+    confirmPassword: '',
+    phoneNumber: '',
+    avatarURL: '',
+  }
 const Auth = () => {
+  const [form, setForm] = useState(initialState);
   const [isSignup, setisSignup] = useState(true);
-  const handleChange = () => {}
+  const handleChange = (e) => {
+    setForm({ ... form, [e.target.value]: e.target.name });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+  }
+
   const switchMode = () => {
     setisSignup((prevIsSignup) => !prevIsSignup);
   }
@@ -17,7 +33,7 @@ const Auth = () => {
         <div className="auth__form-container_fields">
           <div className="auth__form-container_fields-content">
             <p>{isSignup ? 'Sign Up' : 'Sign In'}</p>
-            <form onSubmit={() => {}}>
+            <form onSubmit={handleSubmit}>
                 {isSignup && (
                   <div className="auth__form-container_fields-content_input">
                     <label htmlFor="Full Name">Full Name</label>
@@ -43,9 +59,9 @@ const Auth = () => {
                   </div>
                   {isSignup && (
                   <div className="auth__form-container_fields-content_input">
-                    <label htmlFor="phone#">Phone #</label>
+                    <label htmlFor="phoneNumber">Phone #</label>
                     <input
-                      name="phone#"
+                      name="phoneNumber"
                       type="number"
                       placeholder="+639"
                       onChange={handleChange}
@@ -88,6 +104,9 @@ const Auth = () => {
                     />
                   </div>
                   )}
+                    <div className="auth__form-container_fields-content_button button">
+                      <button>{isSignup ? "Sign Up" : "Sign In"}</button>
+                    </div>
             </form>
                   <div className="auth__form-container_fields-account">
                     <p>
