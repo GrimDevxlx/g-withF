@@ -8,11 +8,15 @@ const crypto = require('crypto');
   const app_id = process.env.STREAM_APP_ID;
 
 
-const login = (req, res) => {
+const signup = async (req, res) => {
   try {
       const { fullName, username, password, phoneNumber } = req.body;
       const userId = crypto.randomBytes(16).toString('hex');
       const serverClient = connect(api_key, api_secret, app_id);
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const token = serverClient.createUserToken(userId);
+          res.status(200).json({ token, fullName, username, userId, hashedPassword, phoneNumber});
 
   } catch (error) {
       console.log(error);
@@ -22,7 +26,7 @@ const login = (req, res) => {
 };
 
 
-const signup = (req, res) => {
+const login = (req, res) => {
   try {
     
   } catch (error) {
