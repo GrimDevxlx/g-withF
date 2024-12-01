@@ -82,7 +82,7 @@ const Auth = () => {
                     <label htmlFor="phoneNumber">Phone #</label>
                     <input
                       name="phoneNumber"
-                      type="number"
+                      type="text"
                       placeholder="+639"
                       onChange={handleChange}
                       required
