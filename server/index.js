@@ -13,4 +13,6 @@ const authRoutes = require("./routes/auth.js");
     app.get('/', (req, res) => {
       res.send('Hello Planet');
     })
+      app.use('/auth', authRoutes);
+
       app.listen(PORT, () => console.log(`Server is running ${PORT}`));
